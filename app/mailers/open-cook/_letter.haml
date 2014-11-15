@@ -1,0 +1,238 @@
+- @user_email_flag = "?uef=#{ @user_email.to_the_encrypted }"
+- @title = "Открытая кухня Анны Нечаевой. Из Питера с Любовью!"
+
+%table{ table, width: 800 }
+  %tr{}
+    %td{ td, style: text_center + bg('#f3f3f3') }
+      = email_image('open-cook/OK-BASE-LOGO.png')
+
+  %tr{}
+    %td{ td, style: p10 }
+      %h3{ style: zero + arial + fs18 + italic + mb10 + lh200 } Вас приветствует кулинарный сайт "Открытая Кухня Анны Нечаевой"
+
+      - p_style = zero + arial + mb13 + lh150 + fs16
+
+      -# HELLO WORLD!
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: w('50%') + text_left }
+            = email_image('open-cook/Anna.png')
+          %td{ td, style: w('50%') + text_left + pl20 }
+            %p{ style: p_style }
+              Здравствуйте! Меня зовут Анна Начаева и я хозяйка
+              #{ link_to('Открытой Кухни', "http://open-cook.ru#{ @user_email_flag }", style: fc('#000099', true)) }.
+
+            %p{ style: p_style }
+              Вы получили это письмо, потому что недавно мы с Ильей Николаевичем (моим мужем) решили попробовать такую форму общения с пользователями нашего сайта, как <b>рассылка</b>.
+
+            %p{ style: p_style }
+              Поздравляем! Вы стали одним из первых получателей нашей рассылки и мы очень хотим верить, что вас заинтересует то, чем мы будем делиться с вами в наших письмах.
+
+            %p{ style: p_style }
+              В этом письме мы расскажем о том, как планируем организовать рассылку, что происходит на наше кухне прямо сегодня и о конкурсе в котором участвуем, и в котором вы можете нам помочь победить.
+
+      -# SUBSCRIBE
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Об этой рассылке
+
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: text_left + pl20 }
+            %p{ style: p_style }
+              Рассылка &mdash; очень удобный способ рассказать о тех кулинарных событиях и приключениях, которые происходят с нами прямо сейчас.
+            %p{ style: p_style }
+              Возможно, вам будет интересно узнать, какие рецепты мы готовим к публикации и какие кулинарные проекты задумали.
+              Если так - просто оставайтесь на связи.
+            %p{ style: p_style }
+              Если нет, то у вас всегда есть возможность остановить получение писем от нас - просто перейдите по ссылке <b>Остановить подписку на новости</b>,
+              которая находится внизу письма.
+            %p{ style: p_style }
+              Мы не хотим быть навязчивыми и поэтому <b>рассылка будет приходить</b> к вам <b>не чаще 1 раза в неделю</b>.
+            %p{ style: p_style }
+              Мы очень надеемся, что наши письма будут вам нравиться. Мы будем рассказывать в них о том, что нам самим кажется интересным.
+              Если, вдруг, вам покажется, что письма стали скучными или у вас возникнут пожелания к ним, то, пожалуйста, дайте нам знать в любой социальной сети или напишите об этом на email:
+              = mail_to('admin@open-cook.ru', 'admin@open-cook.ru', style: fc('#000099', true))
+
+      -# FOODPARTY
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        = "#ПАРТИЯЕДЫ"
+
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: w('50%') + text_left + pl10 + pr20 }
+            %p{ style: p_style }
+              В Москве и Петербурге набирает обороты идея "коробочной доставки еды".
+
+            %p{ style: p_style }
+              Представьте, вы - житель большого города. Полжизни проводите в пробках, очередях или в давке в метро. Да уж, тут уже не до кулинарного творчества. Но выход есть!
+
+            %p{ style: p_style }
+              Умные люди придумали собирать недельный набор продуктов в одной коробке и вкладывают в неё простые, но очень вкусные рецепты.
+              Все сделано так, чтобы потратив не более <nobr>30 минут</nobr> после работы, любой человек смог обеспечить себя и свою половинку вкуснейшей едой.
+
+            %p{ style: p_style }
+              Нам на пробу досталась такая коробочка от компании <b>"Партия Еды"</b>.
+
+
+          %td{ td, style: w('50%') + text_left }
+            = email_image('open-cook/foodparty.png')
+
+      %p{ style: p_style + pl10 }
+        Уже сейчас мы можем подтвердить - это работает! И это вкусно и быстро.
+        До конца этой недели вы можете следить за нашим "коробочным" экспериментом в нашем
+        #{ link_to 'Инстаграме', 'http://instagram.com/mrs_home', style: arial + fs18 + fc('#000099', true) }.
+        А в конце недели мы планируем сделать отчет о наших впечатлениях на нашем сайте и в
+        #{ link_to 'Живом Журнале', 'http://mrs_home.livejournal.com', style: arial + fs18 + fc('#000099', true) }.
+
+      -# Чулан
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Чулан
+
+      %p{ style: p_style + pl10 }
+        Друзья, мы открыли на сайте новый раздел -
+        #{ link_to 'Чулан', "http://open-cook.ru/hubs/hots#{ @user_email_flag }", style: fc('#000099', true) }.
+
+      %p{ style: p_style + pl10 }
+        В этом разделе сайта мы будем делиться с вами интересными находками в Интернете.
+        В чулане могут быть видео-ролики, картинки, ссылки на интересные статьи и прочее, прочее, прочее.
+        Посты в чулане, скорее всего, прямого отношения к сайту иметь не будут.
+        Мы просто будем сохранять и систематизировать здесь то, что нас действительно впечатлило.
+        И, конечно, все в чулане будет связано с едой и вкусностями!
+
+      %p{ style: p_style + pl10 + bold }
+        Почаще заглядывайте в
+        #{ link_to 'Чулан', "http://open-cook.ru/hubs/hots#{ @user_email_flag }", style: fc('#000099', true) },
+        там всегда можно отрыть что-то интересное :)
+
+      %p{ style: p_style + pl10 }
+        PS: К постам в чулане тоже можно оставлять комментарии. Если вас что-то впечатлило - не стесняйтесь, оставляйте отзыв!
+
+      -# NEW YEAR
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Новогодние pецепты 2015
+
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: w('50%') + text_left }
+            = email_image('open-cook/2015.png')
+
+          %td{ td, style: w('50%') + text_left + pl10 + pr20 }
+            %p{ style: p_style }
+              Сейчас начало ноября, но новогодний ажиотаж уже начинается! Держите руку на пульсе!
+
+            %p{ style: p_style }
+              Уже несколько дней в шапке нашего сайта появилась специальная ссылка на страницу
+              %b{ style: nobr }
+                #{ link_to 'Новогодние рецепты 2015', "http://open-cook.ru/posts/novogodnie-retsepty-2015#{ @user_email_flag }", style: fc('#000099', true) }
+
+            %p{ style: p_style }
+              Здесь мы собрали лучшие рецепты для новогоднего стола, которые были у нас за последние 2 года.
+
+            %p{ style: p_style + bold }
+              До 31 декабря Аня будет дополнять эту страницу. Следите за обновлениями.
+
+            %p{ style: p_style }
+              Мы надеемся, что вы найдете на этой странице идеи и для вашего новогоднего стола.
+
+      -# WIN
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Вместе к нашей общей победе!
+
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: text_left + pl10 + pr20 }
+            %p{ style: p_style }
+              Друзья, нам право неловко обращаться к вам за помощью в первом же письме, но <b>именно ваша поддержка может быть решающей</b>!
+
+            %p{ style: p_style }
+              Наш сайт участвует во всеросийском конкурсе сайтов
+              %i{ style: nobr } "Золотой Сайт 2014".
+            %p{ style: p_style }
+              <b>До 7 ноября</b> вы можете поддержать нас, отдав свой голос за наш сайт.
+
+            %p{ style: p_style + mb20 }
+              Мы участвуем в 2х номинациях:
+              %br
+              %br
+              1. #{ link_to 'Оригинальные и познавательные сайты и блоги', "http://2014.goldensite.ru/work/732/", style: fc('#000099', true) }
+              %br
+              2. #{ link_to 'Разработка на Ruby on Rails', "http://2014.goldensite.ru/work/940/", style: fc('#000099', true) }
+
+            %p{ style: p_style }
+              Чтобы обогнать лидера в обеих номинациях нам достаточно набрать всего 10 голосов в системе <b>Runet-id</b>.
+
+            %p{ style: p_style }
+              Если вам нравится наш сайт и вы не против потратить несколько минут на регистрацию на сайте конкурса (мы знаем, что она может быть немного сложной), то, пожалуйста, поддержите нас.
+
+          %td{ td, style: w('250px') + text_left }
+            = email_image('open-cook/win.png')
+
+      %p{ style: p_style + text_center }
+        = email_image('open-cook/vote.png')
+        %br
+        Особенно мы будем рады вашей поддержке через лайки в социальных сетях.
+
+      %p{ style: p_style + mb20 + "border:10px solid lightgray;" + p20 }
+        Проголосовать за нас вы можете тут:
+        %br
+        %br
+        1. #{ link_to 'Оригинальные и познавательные сайты и блоги', "http://2014.goldensite.ru/work/732/", style: fc('#000099', true) }
+        %br
+        2. #{ link_to 'Разработка на Ruby on Rails', "http://2014.goldensite.ru/work/940/", style: fc('#000099', true) }
+
+      -# THANKS
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Спасибо и до скорых встреч!
+
+      %p{ style: p_style }
+        Первое наше письмо получилось довольно насыщенным. Надеемся, мы не успели вас утомить.
+        Спасибо за ваше внимание и до скорых встреч!
+
+  %tr{}
+    %td{ td, style: text_left + bg('#e9e3fb') + p30 }
+      - p_style = zero + arial + mb20 + lh100
+      %p{ style: p_style } Так же вы можете присоединиться к нам в популярных социальных сетях:
+
+      %p{ style: p_style }
+        ВКонтакте:
+        = link_to 'vk.com/opencook', 'https://vk.com/opencook', style: arial + fs18 + fc('#000099', true)
+
+      %p{ style: p_style }
+        Одноклассинки:
+        = link_to 'ok.ru/opencook', 'http://www.ok.ru/opencook', style: arial + fs18 + fc('#000099', true)
+
+      %p{ style: p_style }
+        Живой Журнал (ЖЖ, LJ):
+        = link_to 'mrs_home.livejournal.com', 'http://mrs_home.livejournal.com', style: arial + fs18 + fc('#000099', true)
+
+      %p{ style: p_style }
+        Instagram:
+        = link_to 'instagram.com/mrs_home', 'http://instagram.com/mrs_home', style: arial + fs18 + fc('#000099', true)
+
+      %p{ style: p_style + mb0 }
+        Twitter:
+        = link_to 'twitter.com/opencook_ru', 'https://twitter.com/opencook_ru', style: arial + fs18 + fc('#000099', true)
+
+  %tr{}
+    %td{ td, style: text_left + bg('#fcedbb') + p30 }
+      %p{ style: zero + arial  + mb10  + lh150 }
+        Вы получили это письмо на email #{ mail_to(@user_email, @user_email, style: fc('#000099', true)) }, потому что кто-то (надеемся вы сами), подписался на получение новостей от сайта
+        #{ link_to('open-cook.ru', "http://open-cook.ru/#{ @user_email_flag }", style: fc('#000099', true)) }. Возможно, однажды вы оставили свой адрес электронной почты в комментариях на нашем сайте или кто-то из ваших друзей решил сделать вам сюрприз, указав ваш email в форме подписки.
+
+      %p{ style: zero + arial  + mb10  + lh150 }
+        Если вы считаете что это письмо пришло к вам по ошибке или вы не хотите получать от нас письма, то просто остановите подписку, перейдя по следующей ссылке:
+
+      %p{ style: zero + arial  + mb0  + lh150 }
+        = link_to 'Остановить подписку на новости', "http://open-cook.ru/unsubscribe/#{ @user_email.to_the_encrypted }", style: fc('#000099', true)
+
+  %tr{}
+    %td{ td, style: text_left + bg('#f3f3f3') + p10 }
+      %table{ table }
+        %tr
+          %td{ td }
+            = email_image('open-cook/mixer.png')
+          %td{ td, style: pl20 + pt10 }
+            - p_style = zero + fs15 + times + italic + mb10
+            %p{ style: p_style } Это письмо отправлено вам миксером Анны Нечаевой.
+            %p{ style: p_style } Даже если вы попробуете написать ему, миксер врядли что-то вам ответит.
+            %p{ style: p_style } Увы!

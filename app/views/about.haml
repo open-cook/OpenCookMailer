@@ -1,0 +1,17 @@
+.about
+  .part
+    %p= link_to '<= back', '/'
+
+  .part
+    %h1 About
+    %p Sinatra/Padrino App for Frontend developers
+    %p= image_tag 'sinatra.png'
+
+  .part
+    %p Author
+    %p= link_to 'github.com/the-teacher', 'https://github.com/the-teacher'
+
+  .part
+    %h1 Partial Example (app/views/partials/_text.haml)
+    - 10.times do
+      = partial 'partials/test', :locals => { :text_var => 'Test partial' }

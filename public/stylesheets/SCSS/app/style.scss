@@ -1,0 +1,16 @@
+.index, .about{
+  width: 800px;
+  margin: auto;
+  padding-top: 30px;
+
+  .part{
+    margin-bottom: 30px;
+
+    p{
+      font-size: 1.6em;
+    }
+    a{
+      font-size: 1.5em;
+    }
+  }
+}
