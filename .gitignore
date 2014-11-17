@@ -2,6 +2,7 @@ bin/*
 log/*
 tmp/*
 .bundle
+success
 
 vendor/gems/*
 !vendor/gems/cache/

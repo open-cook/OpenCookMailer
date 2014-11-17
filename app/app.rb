@@ -63,6 +63,8 @@ class MarkupTemplate < Padrino::Application
 
   get '/mail/letter' do
     @user_email = 'zykin-ilya@narod.ru'
+    @unsubscribe_link = "http://open-cook.ru/unsubscribe/#{ @user_email.to_the_encrypted }"
+
     haml :"../mailers/letter", :layout => :mailer, :locals => { :is_mail => false }
   end
 
@@ -73,12 +75,12 @@ class MarkupTemplate < Padrino::Application
     @@attachments = %w[
       open-cook/OK-BASE-LOGO.png
       open-cook/mixer.png
-
-      open-cook/foodparty.png
-      open-cook/2015.png
       open-cook/Anna.png
-      open-cook/vote.png
-      open-cook/win.png
+
+      open-cook/cups.png
+      open-cook/mouse.png
+      open-cook/flowers.png
+      open-cook/recipes.png
     ]
   end
 
@@ -103,16 +105,20 @@ class MarkupTemplate < Padrino::Application
 
     addressers.each do |adresser|
       @user_email = adresser
+      @unsubscribe_link = "http://open-cook.ru/unsubscribe/#{ @user_email.to_the_encrypted }"
+
       html_letter = haml(:"../mailers/letter", :locals => { :is_mail => true }, :layout => false)
 
       begin
         email do
-          from     'mixer@open-cook.ru'
-          to       adresser
-          subject  subject
-          via      :smtp
-          provides :html
+          from      'mixer@open-cook.ru'
+          to        adresser
+          subject   subject
+          via       :smtp
+          provides  :html
           html_part html_letter
+
+          self.header['List-Unsubscribe'] = "<mailto:admin@open-cook.ru?subject=unsubscribe&body=#{ CGI.escape(adresser) }>"
 
           @@attachments.each_with_index do |name, index|
             add_file :filename => name, :content => File.open(@@img_path + name, 'rb') { |f| f.read }
@@ -120,9 +126,18 @@ class MarkupTemplate < Padrino::Application
           end
         end
 
+        puts "!"*30
+        puts adresser
+        puts "!"*30
+
         log_success.puts adresser
         sleep 20
       rescue Exception => e
+        puts "^"*30
+        puts adresser
+        puts e.message
+        puts "^"*30
+
         log_error.puts   adresser
         log_enotice.puts "#{adresser} => #{e.message}"
       end
