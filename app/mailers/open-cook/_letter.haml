@@ -1,5 +1,5 @@
 - @user_email_flag = "?uef=#{ @user_email.to_the_encrypted }"
-- @title = "Новости Открытой Кухни. 16 ноября 2014"
+- @title = "Новости Открытой Кухни. 24 ноября 2014"
 
 %table{ table, width: 800 }
   %tr{}
@@ -22,105 +22,122 @@
               Здравствуйте, наши любимые друзья и дорогие подписчики!
 
             %p{ style: p_style }
-              Что интересного случилось за прошедшие дни на нашей
+              Прошедшая неделя была очень насыщенной и плодотворной.
+              Вот что интересного произошло за это время на нашей
               #{ link_to('Открытой Кухне', "http://open-cook.ru#{ @user_email_flag }", style: fc('#000099', true)) }:
-
 
       -# SECTION 1
       %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
-        Букеты из овощей
+        День рождения Деда Мороза
 
       %table{ table, style: w('100%') + mt20 }
         %tr{}
           %td{ td, style: w('300px') + text_left }
-            = email_image('open-cook/flowers.png')
+            = link_to "http://open-cook.ru/recipes/mandarinovyj-pirog#{ @user_email_flag }", style: m0 + p0 do
+              = email_image('open-cook/mandarin.jpg', alt: "Мандариновый пирог", title: "Мандариновый пирог", style: img_zero)
+
           %td{ td, style: text_left + pl20 }
             %p{ style: p_style + lh200 }
-              Мы выложили статью об одном интересном проекте нашего друга
-              #{ link_to '"Букеты из овощей"', "http://open-cook.ru/posts/bukety-iz-ovoschej#{ @user_email_flag }" },
-              в которой вы увидите красивые фотографии, сделанные нами, и узнаете, что овощи бывают крайне фотогиничными и красивыми. Уверены, они не оставят вас равнодушными и сильно удивят!
+              Мы праздновали День рождения Деда Мороза и пекли
+              #{ link_to 'Мандариновый пирог', "http://open-cook.ru/recipes/mandarinovyj-pirog#{ @user_email_flag }" },
+              рецепт которого уже на сайте. Это самая настоящая мандариновая бомба!
 
             %p{ style: p_style + fs18 }
-              = link_to 'Подробнее о букетах &raquo;', "http://open-cook.ru/posts/bukety-iz-ovoschej#{ @user_email_flag }"
+              = link_to 'Рецепт мандаринового пирога &raquo;', "http://open-cook.ru/recipes/mandarinovyj-pirog#{ @user_email_flag }"
 
       -# SECTION 2
       %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
-        Готовимся к празднику!
+        Готовимся к праздникам!
 
       %table{ table, style: w('100%') + mt20 }
         %tr{}
           %td{ td, style: w('300px') + text_left }
-            = email_image('open-cook/recipes.png')
+
+            = link_to "http://open-cook.ru/posts/novogodnie-retsepty-2015#{ @user_email_flag }", style: m0 + p0 do
+              = email_image('open-cook/celebr.jpg', alt: "Новогодние рецепты", title: "Новогодние рецепты", style: img_zero)
+
           %td{ td, style: text_left + pl20 }
             %p{ style: p_style }
-              На сайте появились новые рецепты праздничных блюд:
+              Наша копилка новогодних рецептов пополнилась новыми блюдами:
 
             %p{ style: p_style }
               1)
-              = link_to 'Куриные рулеты с ананасом и брусникой', "http://open-cook.ru/recipes/kurinye-rulety-s-ananasom-i-brusnikoj#{ @user_email_flag }"
+              = link_to 'Салат с лососем и мандаринами', "http://open-cook.ru/recipes/salat-s-lososem-i-mandarinami#{ @user_email_flag }"
             %p{ style: p_style }
               2)
-              = link_to 'Свиная шея с чесноком в смеси розмарина и пяти перцев', "http://open-cook.ru/recipes/svinaya-sheya-s-chesnokom-v-smesi-rozmarina-i-pyati-pertsev#{ @user_email_flag }"
+              = link_to 'Каре ягненка с лимоном и розмарином', "http://open-cook.ru/recipes/kare-yagnenka-s-limonom-i-rozmarinom#{ @user_email_flag }"
             %p{ style: p_style }
               3)
-              = link_to 'Волшебные Морковные капкейки', "http://open-cook.ru/recipes/morkovnye-kapkejki#{ @user_email_flag }"
+              = link_to 'Рулеты из огурцов с яичным салатом', "http://open-cook.ru/recipes/rulety-iz-ogurtsov-s-yaichnym-salatom#{ @user_email_flag }"
 
       -# SECTION 3
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Оливье. Почти детективная история
+
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: w('300px') + text_left }
+
+            = link_to "http://open-cook.ru/posts/istoriya-salata-olivie#{ @user_email_flag }", style: m0 + p0 do
+              = email_image('open-cook/olivie.jpg', alt: "История салата Оливье", title: "История салата Оливье", style: img_zero)
+
+          %td{ td, style: text_left + pl20 }
+            %p{ style: p_style }
+              Я написала довольно забавную статью об истории <b>салата "Оливье"</b>, надеюсь, она вам понравится
+
+            %p{ style: p_style + fs18 }
+              = link_to 'История салата "Оливье" &raquo;', "http://open-cook.ru/posts/istoriya-salata-olivie#{ @user_email_flag }"
+
+      -# SECTION 4
+      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
+        Новые рецепты на каждый день
+
+      %table{ table, style: w('100%') + mt20 }
+        %tr{}
+          %td{ td, style: w('300px') + text_left }
+
+            = link_to "http://open-cook.ru#{ @user_email_flag }", style: m0 + p0 do
+              = email_image('open-cook/everday.jpg', alt: "На каждый день", title: "На каждый день", style: img_zero)
+
+          %td{ td, style: text_left + pl20 }
+            %p{ style: p_style }
+              Для будничных ужинов у нас для вас есть рецепты:
+
+            %p{ style: p_style }
+              1)
+              = link_to 'Картофельный гратен с беконом', "http://open-cook.ru/recipes/kartofelnyj-graten-s-bekonom#{ @user_email_flag }"
+            %p{ style: p_style }
+              2)
+              = link_to 'Каннелони (Cannelloni) с говяжьим фаршем', "http://open-cook.ru/recipes/kanneloni-cannelloni-s-govyazhim-farshem#{ @user_email_flag }"
+
+      -# SECTION 5
       %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
         Чулан
 
       %table{ table, style: w('100%') + mt20 }
         %tr{}
           %td{ td, style: w('300px') + text_left }
-            = email_image('open-cook/mouse.png')
+            = email_image('open-cook/chulan.jpg')
           %td{ td, style: text_left + pl20 }
             %p{ style: p_style }
               А еще наш
               = link_to "Чулан", "http://open-cook.ru/hubs/hots#{ @user_email_flag }"
-              пополнился новыми интересными видео и картинками:
-            %p{ style: p_style }
-              1)
-              = link_to 'Жорик, а это не опасно?', "http://open-cook.ru/hots/zhorik-eto-ne-opasno#{ @user_email_flag }"
-            %p{ style: p_style }
-              2)
-              = link_to 'Хомяки-бармены', "http://open-cook.ru/hots/nichego-osobennogo-eto-prosto-khomyaki-barmeny#{ @user_email_flag }"
-            %p{ style: p_style }
-              3)
-              = link_to 'На своей кухне я покруче Чака Норриса!', "http://open-cook.ru/hots/na-svoej-kukhne-ya-pokruche-chaka-norrisa#{ @user_email_flag }"
+              пополнился заметкой о празднике молодого вина <b>"Божоле Нуво"</b>:
 
+            %p{ style: p_style + fs18 }
+              = link_to 'День Божоле Нуво &raquo;', "http://open-cook.ru/hots/den-bozhole-nuvo#{ @user_email_flag }"
 
-      -# SECTION 4
+      -# SECTION 6
       %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
         О наших планах
 
       %table{ table, style: w('100%') + mt20 }
         %tr{}
           %td{ td, style: w('300px') + text_left }
-            = email_image('open-cook/cups.png')
+            = email_image('open-cook/next.jpg')
           %td{ td, style: text_left + pl20 }
             %p{ style: p_style + lh200 }
-              На следующей неделе вы увидите на сайте отчет о доставке продуктов от <b>"Партия еды"</b>, второй <b>отчет о винной дегустации</b>, новые рецепты и статьи об истории происхождения всеми любимых новогодних блюд!
-
-
-      -# WIN
-      %p{ style: zero + arial + fs25 + mb20 + mt20 + p10 + text_center + fc('#000099', true) + bg('#e9e3fb') }
-        Народное голосование. Фактически мы победили!
-
-      %table{ table, style: w('100%') + mt20 }
-        %tr{}
-          %td{ td, style: text_left + pl10 + pr20 }
-            %p{ style: p_style }
-              Друзья, в прошлом письме мы сообщали вам о том, что наш сайт принимает участие в народном голосовании в конкурсе "Золотой Сайт 2014".
-            %p{ style: p_style }
-              Мы участвовали в 2х номинациях и в обеих, по результатам открытого голосования, получили
-              %b{ style: nobr } 3-е место!
-            %p{ style: p_style }
-              Если принять во внимание то, что впереди нас оказались только крупные коммерческие сайты и порталы,
-              количество пользователей которых исчисляется миллионами, то мы не без гордости можем подвести итог - фактически мы победили!
-            %p{ style: p_style + bold }
-              Эта наше общее с вами достижение!
-              %br
-              Спасибо Вам за вашу поддержку!
+              А на грядущей неделе вас ждет рецепт пирога с мандаринами и розмарином, рецепт торта "Сказка" по ГОСТу, история создания салата "Селедка под шубой", рассказ о необычном варенье и отчет о дегустации Хересов.
 
   %tr{}
     %td{ td, style: text_left + bg('#e9e3fb') + p30 }
@@ -168,5 +185,5 @@
           %td{ td, style: pl20 + pt10 }
             - p_style = zero + fs15 + times + italic + mb10
             %p{ style: p_style } Это письмо отправлено вам миксером Анны Нечаевой.
-            %p{ style: p_style } Даже если вы попробуете написать ему, миксер врядли что-то вам ответит.
+            %p{ style: p_style } Даже если вы попробуете написать ему, миксер вряд ли что-то вам ответит.
             %p{ style: p_style } Увы!

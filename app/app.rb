@@ -77,19 +77,22 @@ class MarkupTemplate < Padrino::Application
       open-cook/mixer.png
       open-cook/Anna.png
 
-      open-cook/cups.png
-      open-cook/mouse.png
-      open-cook/flowers.png
-      open-cook/recipes.png
+      open-cook/celebr.jpg
+      open-cook/chulan.jpg
+      open-cook/everday.jpg
+      open-cook/mandarin.jpg
+      open-cook/olivie.jpg
+      open-cook/next.jpg
     ]
   end
 
   post '/mail/send' do
-    @is_mail = true
+    @is_mail    = true
+    sleep_delay = 30
 
-    addressers_1 = params[:emails].split(',').map(&:strip)
-    addressers_2 = params[:emails_str].split("\n").map(&:strip)
-    addressers = (addressers_1 + addressers_2).uniq
+    addressers_1 = params[:emails].strip.split(',').map(&:strip)
+    addressers_2 = params[:emails_str].strip.split("\n").map(&:strip)
+    addressers   = (addressers_1 + addressers_2).uniq.reject{|addr| addr.blank? }
 
     subject = params[:subject]
 
@@ -103,7 +106,7 @@ class MarkupTemplate < Padrino::Application
     log_error   = File.open "#{log_name}.error.log",   'w+'
     log_enotice = File.open "#{log_name}.enotice.log", 'w+'
 
-    addressers.each do |adresser|
+    addressers.each_with_index do |adresser, aindex|
       @user_email = adresser
       @unsubscribe_link = "http://open-cook.ru/unsubscribe/#{ @user_email.to_the_encrypted }"
 
@@ -127,14 +130,15 @@ class MarkupTemplate < Padrino::Application
         end
 
         puts "!"*30
-        puts adresser
+        puts "#{ adresser } => #{ aindex.next } of #{ addressers.count }"
         puts "!"*30
 
         log_success.puts adresser
-        sleep 20
+        # SLEEP
+        sleep(sleep_delay)
       rescue Exception => e
         puts "^"*30
-        puts adresser
+        puts "#{ adresser } => #{ aindex.next } of #{ addressers.count }"
         puts e.message
         puts "^"*30
 
